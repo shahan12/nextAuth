@@ -1,0 +1,29 @@
+.infoCard-wrapper{
+    width: 100%;
+    background-color: aqua;
+    padding: 1.25rem 1.5625rem;
+    border-radius: 1.25rem;
+}
+.infocardImageContainer{
+    display: flex;
+    justify-content: end;
+}
+.infoImageWrapper{
+    position: relative;
+    width: 1.65rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cardsTypevalue{
+    font-family: 'Lato';
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+.cardsValue{
+    font-family: 'Open Sans';
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+}

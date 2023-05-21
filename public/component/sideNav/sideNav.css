@@ -1,0 +1,37 @@
+.sideNavWrapper{
+    display: flex;
+    width: 17.5rem;
+    height: 100%;
+    background: black;
+    padding: 3.75rem 3.125rem;
+    color: white;
+    font-family: 'Montserrat';
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 1.875rem;
+}
+.nav-options{
+    padding: 0;
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+.nav-title{
+    display: block;
+    margin-bottom: 2.5rem;
+}
+.sideNavheader{
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 3.75rem;
+}
+
+.footerOptions{
+    padding: 0;
+}
+.footertitle{
+    display: block;
+    margin-bottom: 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+}

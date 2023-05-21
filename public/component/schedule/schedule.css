@@ -1,0 +1,38 @@
+.user-schedules-wrapper{
+    background-color: white;
+    border-radius: 1.85rem;
+    padding: 1.875rem;
+    max-height: 16rem;
+}
+.schedules-section-1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.schedule-header{
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-family: 'Montserrat';
+}
+.schedule-header-sell-all{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-bottom: 0.2rem;
+}
+.schedule-see-all-text{
+    color: #858585;
+    font-size: 0.75rem;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    margin-bottom: 0;
+}
+.see-more-image{
+    position: relative;
+    width: 0.5rem;
+    padding-bottom: 0.2rem;
+}
+.schedule-task-wrapper{
+    display: block;
+}

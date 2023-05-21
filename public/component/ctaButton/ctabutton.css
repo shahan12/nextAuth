@@ -1,0 +1,20 @@
+.cta-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    border-radius: 1rem;
+    width: 11.25rem;
+    height: 1.87rem;
+    background-color: white;
+    border: 0;
+}
+.cta-wrapper:hover{
+    cursor: pointer;
+}
+.sign-in-text{
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: #858585;
+}

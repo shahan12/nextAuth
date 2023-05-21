@@ -1,0 +1,114 @@
+.login-page-wrapper{
+    display: flex;
+    height: 100vh;
+}
+
+.login-section-one{
+    display: flex;
+    background: black;
+    width: 36.75rem;
+    height: 100%;
+}
+
+.section-one-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 4.5rem;
+    width: 100%;
+}
+.login-section-two{
+    width: calc(100vw - 26.75rem);
+    height: 100%;
+    background-color: #F5F5F5;
+}
+.login-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.sign-in-container{
+    display: block;
+}
+.sign-in-tille{
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 2.25rem;
+}
+.sign-in-description{
+    font-family: 'lato';
+    font-weight: 400;
+    font-size: 1rem;
+}
+.sign-in-action-wrapper{
+    display: flex;
+    gap: 1.56rem;
+    margin-top: 1.625rem;
+}
+.sign-in-form-wrapper{
+    margin-top: 1.56rem;
+    width: 24.06rem;
+    height: 19.81rem;
+    border-radius: 1.25rem;
+    background-color: white;
+    padding: 1.875rem;
+    margin-bottom: 1.25rem;
+
+}
+.input-title{
+    display: block;
+    font-family: 'lato';
+    font-weight: 400;
+    font-size: 1rem;
+    margin-bottom: 0.625rem;
+}
+.input-label{
+    width: 20.315rem;
+    height: 2.5rem;
+    background-color: #F5F5F5;
+    font-family: 'lato';
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 0.625rem;
+    padding: 0.625rem 0.9375rem;
+    margin-bottom: 1.25rem;
+}
+.forgot-password-refferer{
+    display: block;
+    color: #346BD4;
+    font-family: 'lato';
+    font-weight: 400;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 1.25rem;
+}
+.submit-button{
+    display: block;
+    background-color: black;
+    width: 20.315rem;
+    height: 2.5rem;
+    color: white;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 0.625rem;
+}
+.create-account-tittle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'lato';
+    font-weight: 400;
+    font-size: 1rem;
+    color: #858585;
+}
+.register-reffere{
+    color: #346BD4;
+    cursor: pointer;
+}

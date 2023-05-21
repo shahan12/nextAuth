@@ -1,0 +1,40 @@
+.dashboard-wrapper{
+    background-color: #DDDDDD;
+    display: flex;
+    padding: 2.5rem;
+    width: 100vw;
+    height: 100vh;
+    gap: 3.75rem;
+}
+.page-content-wrapper{
+    width: 100%;
+}
+
+.info-cards-wrapper{
+    margin-top: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.305rem;
+    max-height: 7.75rem;
+}
+.dashboard-section-3{
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+.pie-chart-wrapper{
+    width: 50%;
+}
+.shedules-view{
+    width: 48%;
+
+}
+.dashboard-pie-container{
+    width: 48%;
+}
+.line-graph-container{
+    margin: 2.5rem 0;
+    max-height: 22.4rem;
+
+}
