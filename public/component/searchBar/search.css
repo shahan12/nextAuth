@@ -12,6 +12,10 @@
     position: relative;
     
 }
+
+input:focus{
+    outline: none;
+}
 .input-field{
     border: none;
     border-radius: 0.625rem;

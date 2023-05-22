@@ -5,22 +5,32 @@ import Image from "next/image";
 import "./search.css";
 import searchIcon from "../../../public/Search Icon.png";
 import { WidthFull } from "@mui/icons-material";
+import OutsideClickHandler from "react-outside-click-handler/build/OutsideClickHandler";
 
 export default function SearchBar() {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState("Search...");
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
   };
 
   return (
-    <div className="input-wrapper">
-      <input className="input-field" value="Search..."></input>
-      <div className="image-wrapper">
-        <div className="search-icon-container">
-          <Image src={searchIcon} fill={true}></Image>
+    <OutsideClickHandler
+      onOutsideClick={() => searchTerm === "" && setSearchTerm("Search...")}
+    >
+      <div className="input-wrapper">
+        <input
+          className="input-field"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          onClick={(e) => searchTerm === "Search..." && setSearchTerm("")}
+        ></input>
+        <div className="image-wrapper">
+          <div className="search-icon-container">
+            <Image src={searchIcon} fill={true}></Image>
+          </div>
         </div>
       </div>
-    </div>
+    </OutsideClickHandler>
   );
 }
