@@ -5,10 +5,16 @@ import React, { useState } from "react";
 import "../../styles/login.css";
 import { signIn } from "next-auth/react";
 import Ctabutton from "../../public/component/ctaButton/button";
+// import { Alert } from "react-alert";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const hanndleOtherClick = (e) => {
+    e.preventDefault();
+    alert("Oops! Please Use Sign In with Google");
+  };
 
   // const submitHandler = async (e) => {
   //   e.preventDefault();
@@ -40,7 +46,9 @@ const Login = () => {
               <div onClick={() => signIn("google")}>
                 <Ctabutton provider={"Google"} />
               </div>
-              <Ctabutton provider={"Apple"} />
+              <div onClick={(e) => hanndleOtherClick(e)}>
+                <Ctabutton provider={"Apple"} />
+              </div>
             </div>
             <form className="sign-in-form-wrapper">
               <label className="input-title">Email address</label>
@@ -57,12 +65,25 @@ const Login = () => {
                 className="input-label"
                 onChange={(e) => setPassword(e.target.value)}
               ></input>
-              <a className="forgot-password-refferer">Forgot Password?</a>
-              <button className="submit-button">Sign In</button>
+              <a
+                className="forgot-password-refferer"
+                onClick={(e) => hanndleOtherClick(e)}
+              >
+                Forgot Password?
+              </a>
+              <button
+                className="submit-button"
+                onClick={(e) => hanndleOtherClick(e)}
+              >
+                Sign In
+              </button>
             </form>
-            <div className="create-account-tittle">
-              Don't have and account?{" "}
-              <a className="register-reffere">Register here</a>
+            <div
+              className="create-account-tittle"
+              onClick={(e) => hanndleOtherClick(e)}
+            >
+              Don't have and account?&nbsp;
+              <a className="register-reffere"> Register here</a>
             </div>
           </div>
         </div>

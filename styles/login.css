@@ -112,3 +112,7 @@
     color: #346BD4;
     cursor: pointer;
 }
+a{
+  text-decoration: none !important;
+
+}

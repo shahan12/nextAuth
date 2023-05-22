@@ -18,3 +18,7 @@
     font-size: 0.75rem;
     color: #858585;
 }
+.cta-image-wrapper{
+    position: relative;
+    padding-bottom: 0.2rem;
+}
