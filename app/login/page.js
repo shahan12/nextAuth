@@ -47,7 +47,6 @@ const Login = () => {
               <input
                 type="email"
                 autoCapitalize="false"
-                autoFill="false"
                 className="input-label"
                 onChange={(e) => setEmail(e.target.value)}
               ></input>
@@ -55,7 +54,6 @@ const Login = () => {
               <input
                 type="password"
                 autoCapitalize="false"
-                autoFill="false"
                 className="input-label"
                 onChange={(e) => setPassword(e.target.value)}
               ></input>

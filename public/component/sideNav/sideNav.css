@@ -9,6 +9,7 @@
     flex-direction: column;
     justify-content: space-between;
     border-radius: 1.875rem;
+    position: sticky;
 }
 .nav-options{
     padding: 0;

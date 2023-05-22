@@ -1,0 +1,15 @@
+.date-selector-container{
+    font-size: 0.75rem;
+    color: #858585;
+    font-weight: 400;
+    font-family: 'Montserrat';
+    display: flex;
+    gap: 0.31rem;
+    cursor: pointer;
+}
+.date-selector-im{
+    position: relative;
+}
+.rotate-see-more{
+    transform: rotate(90deg);
+}

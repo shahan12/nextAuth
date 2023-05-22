@@ -1,6 +1,8 @@
 import { Line } from "react-chartjs-2";
 import { CategoryScale } from "chart.js";
 import Chart from "chart.js/auto";
+import { LineChartOptions } from "../../constraints";
+import DateSelector from "../dateSelector/dateSelector";
 
 const plugin = {
   beforeInit: function (chart) {
@@ -15,51 +17,12 @@ const plugin = {
   },
 };
 
-const options = {
-  responsive: false,
-  layout: {
-    autoPadding: false,
-  },
-  plugins: {
-    color: "black",
-    legend: {
-      position: "top",
-      align: "end",
-      labels: {
-        usePointStyle: true,
-        pointStyle: "circle",
-        color: "#000000",
-        backgroundColor: "#9BDD7C",
-        padding: 20,
-      },
-      title: {
-        display: true,
-      },
-    },
-    title: {
-      display: true,
-      text: "Montly Average Temprature",
-      align: "start",
-      color: "#000000",
-      font: {
-        size: 18,
-      },
-    },
-  },
-  scales: {
-    x: {
-      grid: {
-        display: false,
-      },
-    },
-  },
-};
 const LineChart = ({ apidata }) => {
   const data = {
     labels: apidata?.label,
     datasets: [
       {
-        label: "Avg Temp 2020",
+        label: "Avg Temp 2023",
         fill: false,
         borderColor: "#9BDD7C",
         borderCapStyle: "butt",
@@ -71,7 +34,7 @@ const LineChart = ({ apidata }) => {
         pointBorderWidth: 1,
         pointRadius: 0,
         pointHitRadius: 10,
-        data: apidata.data1,
+        data: apidata?.data1,
         lineTension: 0.4,
       },
       {
@@ -94,35 +57,40 @@ const LineChart = ({ apidata }) => {
   };
 
   return (
-    <div
-      style={{
-        backgroundColor: "white",
-        paddingLeft: "2.5rem",
-        paddingRight: "2.5rem",
-        paddingTop: "1.875rem",
-        paddingBottom: "1.56rem",
-        width: "100%",
-        maxHeight: "100%",
-        borderRadius: "1.25rem",
-      }}
-    >
-      <Line
-        data={data}
-        width={"1000px"}
-        height={"295px"}
-        options={options}
-        plugins={[
-          plugin,
-          {
-            beforeDraw(c) {
-              var legends = c.legend.legendItems;
-              legends[0].fillStyle = "#9BDD7C";
-              legends[1].fillStyle = "#E9A0A0";
+    <>
+      <div
+        style={{
+          backgroundColor: "white",
+          paddingLeft: "2.5rem",
+          paddingRight: "2.5rem",
+          paddingTop: "1.875rem",
+          paddingBottom: "1.56rem",
+          width: "100%",
+          maxHeight: "100%",
+          borderRadius: "1.25rem",
+        }}
+      >
+        <Line
+          data={data}
+          width={"1000px"}
+          height={"295px"}
+          options={LineChartOptions}
+          plugins={[
+            plugin,
+            {
+              beforeDraw(c) {
+                var legends = c.legend.legendItems;
+                legends[0].fillStyle = "#9BDD7C";
+                legends[1].fillStyle = "#E9A0A0";
+              },
             },
-          },
-        ]}
-      />
-    </div>
+          ]}
+        />
+      </div>
+      <div style={{ position: "absolute", left: "2.5rem", top: "3.8rem" }}>
+        <DateSelector start="Jan" end="July" year="1980" />
+      </div>
+    </>
   );
 };
 

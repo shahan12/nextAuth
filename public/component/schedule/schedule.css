@@ -20,6 +20,7 @@
     justify-content: center;
     gap: 0.4rem;
     margin-bottom: 0.2rem;
+    cursor: pointer;
 }
 .schedule-see-all-text{
     color: #858585;

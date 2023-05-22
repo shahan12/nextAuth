@@ -16,21 +16,19 @@ const Dashboard = () => {
   const [lineData, setLineData] = useState({});
   const [pieData, setPieData] = useState({});
   useEffect(() => {
-    // handleLineGraphData();
+    handleLineGraphData();
     // handleGetPieChartData();
   }, []);
 
   const handleLineGraphData = async () => {
     try {
-      const res = await axios.get(
-        "https://shahan.free.beeceptor.com/getLineData"
-      );
+      const res = await axios.get("https://vault-api-jwlu.onrender.com/safes");
       setLineData(res.data);
       if (res && res.data) {
         console.log("here api call");
         try {
           const res1 = await axios.get(
-            "https://shahan.free.beeceptor.com/pieData"
+            "https://vault-api-jwlu.onrender.com/pie"
           );
           setPieData(res1.data);
           console.log(res1.data);
@@ -58,11 +56,11 @@ const Dashboard = () => {
               <InfoCards type="Total Users" value="892" />
             </div>
             <div className="line-graph-container">
-              <LineChart apidata={lineData} />
+              <LineChart apidata={lineData?.[0]} />
             </div>
             <div className="dashboard-section-3">
               <div className="dashboard-pie-container">
-                <PieChart apiData={pieData} />
+                <PieChart apiData={pieData?.[0]} />
               </div>
               <div className="shedules-view">
                 {" "}
