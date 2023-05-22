@@ -14,17 +14,21 @@
 .nav-options{
     padding: 0;
     font-size: 1.125rem;
-    font-weight: 700;
+    font-weight: 400;
 }
 
 .nav-title{
     display: block;
-    margin-bottom: 2.5rem;
+    cursor: pointer;
+   
 }
 .sideNavheader{
     font-size: 2.25rem;
-    font-weight: 700;
+    font-weight: 400;
     margin-bottom: 3.75rem;
+}
+.add-active-style{
+    font-weight: 700;
 }
 
 .footerOptions{
@@ -32,7 +36,21 @@
 }
 .footertitle{
     display: block;
-    margin-bottom: 1.25rem;
     font-size: 0.875rem;
     font-weight: 400;
+    cursor: pointer;
+}
+.side-nav-img{
+    position: relative;
+    width: 1.1rem;
+}
+.img-nav{
+    width: 1.1rem;
+}
+.nav-options-cotainer{
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+
 }
