@@ -15,7 +15,9 @@ const Dashboard = () => {
 
   const [lineData, setLineData] = useState({});
   const [pieData, setPieData] = useState({});
+  const [loader, setLader] = useState(false);
   useEffect(() => {
+    setLader(true);
     handleLineGraphData();
     // handleGetPieChartData();
   }, []);
@@ -32,14 +34,21 @@ const Dashboard = () => {
           );
           setPieData(res1.data);
           console.log(res1.data);
+          setLader(false);
         } catch (error) {
           console.log("Error occured", error);
+          alert("API failed Please reload the page");
+          setLader(false);
         }
       } else {
         console.log("Api Failed check console");
+        alert("API failed Please reload the page");
+        setLader(false);
       }
     } catch (error) {
       console.log("Error occured", error);
+      alert("API failed Please reload the page");
+      setLader(false);
     }
   };
   if (status === "authenticated") {
@@ -56,11 +65,11 @@ const Dashboard = () => {
               <InfoCards type="Total Users" value="892" />
             </div>
             <div className="line-graph-container">
-              <LineChart apidata={lineData?.[0]} />
+              <LineChart apidata={lineData?.[0]} loader={loader} />
             </div>
             <div className="dashboard-section-3">
               <div className="dashboard-pie-container">
-                <PieChart apiData={pieData?.[0]} />
+                <PieChart apiData={pieData?.[0]} loader={loader} />
               </div>
               <div className="shedules-view">
                 {" "}
@@ -74,7 +83,7 @@ const Dashboard = () => {
   } else {
     return (
       <div>
-        <a href="/">Sign in</a>
+        <a href="/">Please Sign In to View the Dashboard</a>
       </div>
     );
   }

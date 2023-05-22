@@ -2,8 +2,9 @@ import { useEffect } from "react";
 import { Pie } from "react-chartjs-2";
 import { PieChartOptions } from "../../constraints";
 import DateSelector from "../dateSelector/dateSelector";
+import { LinearProgress } from "@mui/material";
 
-const PieChart = ({ apiData }) => {
+const PieChart = ({ apiData, loader }) => {
   let values = apiData?.value || [];
   let legends = apiData?.legend;
   let total = 0;
@@ -40,7 +41,23 @@ const PieChart = ({ apiData }) => {
     ],
   };
 
-  return (
+  return loader ? (
+    <div
+      style={{
+        backgroundColor: "white",
+        paddingLeft: "2.5rem",
+        paddingRight: "2.5rem",
+        paddingTop: "8rem",
+        width: "100%",
+        height: "100%",
+        borderRadius: "1.25rem",
+        height: "16rem",
+      }}
+    >
+      {" "}
+      <LinearProgress />
+    </div>
+  ) : (
     <>
       <div
         style={{

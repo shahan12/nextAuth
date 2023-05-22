@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import "../../styles/login.css";
 import { signIn } from "next-auth/react";
 import Ctabutton from "../../public/component/ctaButton/button";
-// import { Alert } from "react-alert";
 
 const Login = () => {
   const [email, setEmail] = useState("");

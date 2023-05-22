@@ -3,6 +3,7 @@ import { CategoryScale } from "chart.js";
 import Chart from "chart.js/auto";
 import { LineChartOptions } from "../../constraints";
 import DateSelector from "../dateSelector/dateSelector";
+import { LinearProgress } from "@mui/material";
 
 const plugin = {
   beforeInit: function (chart) {
@@ -17,7 +18,7 @@ const plugin = {
   },
 };
 
-const LineChart = ({ apidata }) => {
+const LineChart = ({ apidata, loader }) => {
   const data = {
     labels: apidata?.label,
     datasets: [
@@ -56,7 +57,21 @@ const LineChart = ({ apidata }) => {
     ],
   };
 
-  return (
+  return loader ? (
+    <div
+      style={{
+        backgroundColor: "white",
+        paddingLeft: "2.5rem",
+        paddingRight: "2.5rem",
+        paddingTop: "12rem",
+        width: "100%",
+        height: "100%",
+        borderRadius: "1.25rem",
+      }}
+    >
+      <LinearProgress color="success" />
+    </div>
+  ) : (
     <>
       <div
         style={{
