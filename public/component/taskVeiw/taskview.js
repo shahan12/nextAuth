@@ -1,4 +1,4 @@
-import "./taskview.css";
+import "./taskView.css";
 const Tasks = ({ header, time, place }) => {
   const finalStyles = header.includes("Meeting") ? "#9BDD7C" : "#6972C3";
   return (

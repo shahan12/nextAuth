@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import "./SideNav.css";
+import "./sideNav.css";
 import Dashboard from "../../../public/dashboard_icondashbord.png";
 import Transaction from "../../../public/transaction_icontransaction.png";
 import Schedule from "../../../public/schedule_icon.png";
