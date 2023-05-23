@@ -24,6 +24,7 @@ const InfoCards = ({ type, value }) => {
       <div className="infocardImageContainer">
         <div className="infoImageWrapper">
           <Image
+            alt={"cards"}
             src={
               type === "Total Revenues"
                 ? RevenueImg

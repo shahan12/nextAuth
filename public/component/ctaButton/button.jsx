@@ -6,7 +6,10 @@ function Ctabutton({ provider }) {
   return (
     <button className="cta-wrapper">
       <div className="cta-image-wrapper">
-        <Image src={provider === "Google" ? GooggleImg : AppleImg}></Image>
+        <Image
+          src={provider === "Google" ? GooggleImg : AppleImg}
+          alt={"login-icon"}
+        ></Image>
       </div>
       <span className="sign-in-text">{`Sign in with ${provider}`}</span>
     </button>

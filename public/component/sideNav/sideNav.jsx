@@ -11,22 +11,27 @@ import Image from "next/image";
 const SideNav = () => {
   const navTitle = [
     {
+      id: 1,
       name: "Dashboard",
       img: Dashboard,
     },
     {
+      id: 2,
       name: "Transaction",
       img: Transaction,
     },
     {
+      id: 3,
       name: "Schedule",
       img: Schedule,
     },
     {
+      id: 4,
       name: "Users",
       img: User,
     },
     {
+      id: 5,
       name: "Settings",
       img: Setting,
     },
@@ -43,17 +48,17 @@ const SideNav = () => {
             {navTitle.map((item, index) => (
               <div className="nav-options-cotainer">
                 <div className="side-nav-img">
-                  <Image src={item.img} className="img-nav" />
+                  <Image src={item.img} className="img-nav" alt={"side-nav"} />
                 </div>
-                <l1
+                <li
                   className={`nav-title ${
                     activeTab === item.name && "add-active-style"
                   }`}
-                  key={index}
+                  key={`${index}_${item}_${item.id}`}
                   onClick={() => setActiveTab(item.name)}
                 >
                   {item.name}
-                </l1>
+                </li>
               </div>
             ))}
           </ol>
@@ -62,9 +67,9 @@ const SideNav = () => {
       <div className="sideNavSection2container">
         <ol className="footerOptions">
           {footerText.map((item, index) => [
-            <l1 className="footertitle" key={index}>
+            <li className="footertitle" key={`${index}_${item}`}>
               {item}
-            </l1>,
+            </li>,
           ])}
         </ol>
       </div>

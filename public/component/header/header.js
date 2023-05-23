@@ -15,7 +15,7 @@ const Header = () => {
       <div className="header-section-2">
         <SearchBar />
         <span className="bellIcon">
-          <Image src={bellIcon}></Image>
+          <Image src={bellIcon} alt={"bell-icon"}></Image>
         </span>
         <span>
           {data?.user && (

@@ -27,7 +27,7 @@ export default function SearchBar() {
         ></input>
         <div className="image-wrapper">
           <div className="search-icon-container">
-            <Image src={searchIcon} fill={true}></Image>
+            <Image src={searchIcon} fill={true} alt={"search"}></Image>
           </div>
         </div>
       </div>

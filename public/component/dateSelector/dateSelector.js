@@ -8,7 +8,11 @@ const DateSelector = ({ start, end, year }) => {
       <span className="date-selector-container">
         {start}-{end} {year}
         <div className="date-selector-img">
-          <Image className="rotate-see-more" src={SeeMore}></Image>
+          <Image
+            className="rotate-see-more"
+            src={SeeMore}
+            alt={"see-more"}
+          ></Image>
         </div>
       </span>
     </>

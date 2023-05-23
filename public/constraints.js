@@ -1,5 +1,5 @@
 export const LineChartOptions = {
-  responsive: false,
+  responsive: true,
   layout: {
     autoPadding: false,
   },
@@ -51,7 +51,7 @@ export const PieChartOptions = {
     color: "black",
     legend: {
       position: "right",
-      align: "center",
+      align: "middle",
       labels: {
         usePointStyle: true,
         pointStyle: "circle",

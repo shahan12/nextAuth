@@ -4,6 +4,7 @@ import Chart from "chart.js/auto";
 import { LineChartOptions } from "../../constraints";
 import DateSelector from "../dateSelector/dateSelector";
 import { LinearProgress } from "@mui/material";
+import React from "react";
 
 const plugin = {
   beforeInit: function (chart) {
@@ -19,6 +20,13 @@ const plugin = {
 };
 
 const LineChart = ({ apidata, loader }) => {
+  React.useEffect(() => {
+    window.addEventListener("afterprint", () => {
+      console.log("check1");
+      document.getElementsByTagName("canvas")[0].resize("100%", "1440px");
+    });
+  });
+
   const data = {
     labels: apidata?.label,
     datasets: [
@@ -86,8 +94,9 @@ const LineChart = ({ apidata, loader }) => {
         }}
       >
         <Line
+          id="myChart"
           data={data}
-          width={"1000px"}
+          width={"1080px"}
           height={"295px"}
           options={LineChartOptions}
           plugins={[

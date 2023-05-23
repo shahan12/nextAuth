@@ -11,7 +11,7 @@ const Schedule = () => {
           <div className="schedule-header-sell-all">
             <span className="schedule-see-all-text">See All</span>
             <div className="see-more-image">
-              <Image src={SeeMore}></Image>
+              <Image src={SeeMore} alt={"see-more"}></Image>
             </div>
           </div>
         </div>
