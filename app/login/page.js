@@ -5,6 +5,8 @@ import React, { useState } from "react";
 import "../../styles/login.css";
 import { signIn } from "next-auth/react";
 import Ctabutton from "../../public/component/ctaButton/button";
+import auth from "../../firebase/firebase.js";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -15,21 +17,17 @@ const Login = () => {
     alert("Oops! Please Use Sign In with Google");
   };
 
-  // const submitHandler = async (e) => {
-  //   e.preventDefault();
-
-  //   try {
-  //     const data = await signIn("credentials", {
-  //       redirect: false,
-  //       email,
-  //       password,
-  //     });
-
-  //     console.log(data);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        window.location = "/dashboard";
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        alert(`Please Check Email / Password ${errorMessage}`);
+      });
+  };
 
   return (
     <article className="login-page-wrapper">
@@ -72,7 +70,7 @@ const Login = () => {
               </a>
               <button
                 className="submit-button"
-                onClick={(e) => hanndleOtherClick(e)}
+                onClick={(e) => submitHandler(e)}
               >
                 Sign In
               </button>
