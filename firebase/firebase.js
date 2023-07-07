@@ -1,9 +1,10 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { getFirestore } from "@firebase/firestore";
 import "firebase/auth";
 import "firebase/firestore";
 
-const clientCreds = {
+export const clientCreds = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API,
   authDomain: process.env.NEXT_PUBLIC_FIREBASE_DOMAIN,
   projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECTID,
@@ -15,5 +16,5 @@ const clientCreds = {
 
 const app = initializeApp(clientCreds);
 const auth = getAuth(app);
-
-export default auth;
+const DB = getFirestore(app);
+export { auth, DB };

@@ -1,12 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import React, { useState } from "react";
 import "../../styles/login.css";
 import { signIn } from "next-auth/react";
 import Ctabutton from "../../public/component/ctaButton/button";
-import auth from "../../firebase/firebase.js";
-import { signInWithEmailAndPassword } from "firebase/auth";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -19,14 +16,17 @@ const Login = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        window.location = "/dashboard";
-      })
-      .catch((error) => {
-        const errorMessage = error.message;
-        alert(`Please Check Email / Password ${errorMessage}`);
+    try {
+      const data = await signIn("credentials", {
+        email,
+        password,
       });
+      console.log(data);
+      window.location = "/dashboard";
+    } catch (error) {
+      alert(`Please Check Email / Password ${errorMessage}`);
+      window.location = "/";
+    }
   };
 
   return (
