@@ -23,3 +23,13 @@
     height: 1.5rem;
     border-radius: 50%;
 }
+.relative{
+    position: relative;
+    cursor: pointer;
+}
+
+.dropDownWrapper{
+    position: absolute;
+    right: 0.5rem;
+    top: 3rem;
+}

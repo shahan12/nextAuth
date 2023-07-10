@@ -5,9 +5,13 @@ import SearchBar from "../searchBar/searchbar";
 import "./header.css";
 import Image from "next/image";
 import bellIcon from "../../../public/Vector.png";
+import defaultImg from "../../../public/default.svg";
+import { useState } from "react";
+import DropDown from "../dropDown/dropDown";
 
 const Header = () => {
   const { data } = useSession();
+  const [dropDown, setDropDown] = useState(false);
 
   return (
     <div className="header-wrapper">
@@ -17,8 +21,8 @@ const Header = () => {
         <span className="bellIcon">
           <Image src={bellIcon} alt={"bell-icon"}></Image>
         </span>
-        <span>
-          {data?.user && (
+        <span onClick={() => setDropDown(!dropDown)} className="relative">
+          {data?.user && data?.user.image ? (
             <>
               <span className="profilePictureWrapper">
                 <img
@@ -28,6 +32,15 @@ const Header = () => {
                 />
               </span>
             </>
+          ) : (
+            <span className="profilePictureWrapper">
+              <Image src={defaultImg} alt={"profile"}></Image>
+            </span>
+          )}
+          {dropDown && (
+            <div className="dropDownWrapper">
+              <DropDown />
+            </div>
           )}
         </span>
       </div>
