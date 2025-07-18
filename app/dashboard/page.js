@@ -53,6 +53,7 @@ const Dashboard = () => {
   });
   const [loader, setLader] = useState(false);
   useEffect(() => {
+    console.log(lineData, pieData);
     setLader(true);
     setTimeout(() => {
       setLader(false);

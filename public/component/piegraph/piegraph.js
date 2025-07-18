@@ -9,7 +9,7 @@ const PieChart = ({ apiData, loader }) => {
   let legends = apiData?.legend;
   let total = 0;
   let labelsvalues = [];
-
+  console.log(apiData, "pie");
   useEffect(() => {
     if (apiData && Object.keys(apiData).length > 0) {
       total = [300, 50, 100].reduce(

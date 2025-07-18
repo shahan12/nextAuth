@@ -26,12 +26,12 @@ const LineChart = ({ apidata, loader }) => {
       document.getElementsByTagName("canvas")[0].resize("100%", "1440px");
     });
   });
-
+  console.log(apidata, "line");
   const data = {
-    labels: apidata?.label,
+    labels: apidata?.labels,
     datasets: [
       {
-        label: "Avg Temp 2023",
+        label: "Avg Temp 2025",
         fill: false,
         borderColor: "#9BDD7C",
         borderCapStyle: "butt",
