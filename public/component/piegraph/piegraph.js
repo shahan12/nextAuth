@@ -5,7 +5,7 @@ import DateSelector from "../dateSelector/dateSelector";
 import { LinearProgress } from "@mui/material";
 
 const PieChart = ({ apiData, loader }) => {
-  let values = apiData?.value || [];
+  let values = apiData?.datasets[0].data || [];
   let legends = apiData?.legend;
   let total = 0;
   let labelsvalues = [];
