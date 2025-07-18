@@ -104,11 +104,11 @@ const Dashboard = () => {
               <InfoCards type="Total Users" value="892" />
             </div>
             <div className="line-graph-container">
-              <LineChart apidata={lineData?.[0]} loader={loader} />
+              <LineChart apidata={lineData} loader={loader} />
             </div>
             <div className="dashboard-section-3">
               <div className="dashboard-pie-container">
-                <PieChart apiData={pieData?.[0]} loader={loader} />
+                <PieChart apiData={pieData} loader={loader} />
               </div>
               <div className="shedules-view">
                 {" "}
