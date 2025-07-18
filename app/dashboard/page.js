@@ -90,7 +90,7 @@ const Dashboard = () => {
       setLader(false);
     }
   };
-  if (true) {
+  if (status === "authenticated") {
     return (
       <>
         <article className="dashboard-wrapper">
