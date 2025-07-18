@@ -6,9 +6,9 @@ import { LinearProgress } from "@mui/material";
 
 const PieChart = ({ apiData, loader }) => {
   let values = apiData?.datasets?.[0]?.data || [];
-  let legends = apiData?.legend;
+  let legends = apiData?.labels;
   let total = 0;
-  let labelsvalues = [];
+  let labelsvalues = [30, 50, 100];
   console.log(apiData, "pie");
   useEffect(() => {
     if (apiData && Object.keys(apiData).length > 0) {
