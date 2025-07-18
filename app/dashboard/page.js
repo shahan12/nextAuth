@@ -11,7 +11,7 @@ import Schedule from "../../public/component/schedule/schedule";
 import axios from "axios";
 
 const Dashboard = () => {
-  // const { data: session, status } = useSession();
+  const { data: session, status } = useSession();
 
   const [lineData, setLineData] = useState({
     labels: ["January", "February", "March", "April", "May", "June"], // X-axis labels
