@@ -59,7 +59,7 @@ const LineChart = ({ apidata, loader }) => {
         pointBorderWidth: 1,
         pointRadius: 0,
         pointHitRadius: 10,
-        data: apidata?.datasets?.[1].data,
+        data: apidata?.datasets?.[1]?.data,
         lineTension: 0.4,
       },
     ],
