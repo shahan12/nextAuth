@@ -11,14 +11,53 @@ import Schedule from "../../public/component/schedule/schedule";
 import axios from "axios";
 
 const Dashboard = () => {
-  const { data: session, status } = useSession();
+  // const { data: session, status } = useSession();
 
-  const [lineData, setLineData] = useState({});
-  const [pieData, setPieData] = useState({});
+  const [lineData, setLineData] = useState({
+    labels: ["January", "February", "March", "April", "May", "June"], // X-axis labels
+    datasets: [
+      {
+        label: "My First Dataset", // Label for this specific line/dataset
+        data: [65, 59, 80, 81, 56, 55], // Y-axis values corresponding to labels
+        fill: false, // Whether to fill the area under the line
+        borderColor: "rgb(75, 192, 192)", // Line color
+        tension: 0.1, // Smoothness of the line
+      },
+      {
+        label: "My Second Dataset",
+        data: [28, 48, 40, 19, 86, 27],
+        fill: false,
+        borderColor: "rgb(255, 99, 132)",
+        tension: 0.1,
+      },
+    ],
+  });
+  const [pieData, setPieData] = useState({
+    labels: ["Red", "Blue", "Yellow"], // Labels for each slice
+    datasets: [
+      {
+        data: [300, 50, 100], // Values for each slice
+        backgroundColor: [
+          "rgba(255, 99, 132, 0.6)", // Color for 'Red'
+          "rgba(54, 162, 235, 0.6)", // Color for 'Blue'
+          "rgba(255, 206, 86, 0.6)", // Color for 'Yellow'
+        ],
+        borderColor: [
+          "rgba(255, 99, 132, 1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+        ],
+        borderWidth: 1,
+      },
+    ],
+  });
   const [loader, setLader] = useState(false);
   useEffect(() => {
     setLader(true);
-    handleLineGraphData();
+    setTimeout(() => {
+      setLader(false);
+    }, 1000);
+    // handleLineGraphData();
     // handleGetPieChartData();
   }, []);
 
@@ -51,7 +90,7 @@ const Dashboard = () => {
       setLader(false);
     }
   };
-  if (status === "authenticated") {
+  if (true) {
     return (
       <>
         <article className="dashboard-wrapper">
